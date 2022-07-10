@@ -39,19 +39,32 @@ body {
 }
 
 .game {
+    padding: 1em 0;
     width: 50%;
     border: 1px solid var(--c-yellow);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+#game__title {
+    margin: 0.5em;
+}
 button {
     width: 60%;
+    color: var(--c-blue);
+    background-color: var(--c-yellow);
+    border: 1px solid var(--c-yellow);
+    border-radius: 0.5em;
+    margin: 0.2em;
 }
 
 .spell-list__item,
 .beast-list__item {
     list-style: none;
+}
+
+.beast-list__item {
+    text-align: left;
 }
 
 .spell__list,

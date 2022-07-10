@@ -88,15 +88,15 @@ const avada = {
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    document.getElementById('crapaud').textContent = crapaud.name;
-    document.getElementById('lutin').textContent = lutin.name;
-    document.getElementById('epouvantard').textContent = epouvantard.name;
-    document.getElementById('centaure').textContent = centaure.name;
-    document.getElementById('acromantule').textContent = acromantule.name;
-    document.getElementById('hippogriffe').textContent = hippogriffe.name;
-    document.getElementById('sombral').textContent = sombral.name;
-    document.getElementById('detraqueur').textContent = detraqueur.name;
-    document.getElementById('elfe').textContent = elfe.name;
+    document.getElementById('crapaud').textContent = `${crapaud.name} (${crapaud.number})`;
+    document.getElementById('lutin').textContent = `${lutin.name} (${lutin.number})`;
+    document.getElementById('epouvantard').textContent = `${epouvantard.name} (${epouvantard.number})`;
+    document.getElementById('centaure').textContent = `${centaure.name} (${centaure.number})`;
+    document.getElementById('acromantule').textContent = `${acromantule.name} (${acromantule.number})`;
+    document.getElementById('hippogriffe').textContent = `${hippogriffe.name} (${hippogriffe.number})`;
+    document.getElementById('sombral').textContent = `${sombral.name} (${sombral.number})`;
+    document.getElementById('detraqueur').textContent = `${detraqueur.name} (${detraqueur.number})`;
+    document.getElementById('elfe').textContent = `${elfe.name} (${elfe.number})`;
     document.getElementById('lumos').textContent = lumos.name;
     document.getElementById('accio').textContent = accio.name;
     document.getElementById('incendio').textContent = incendio.name;
@@ -121,126 +121,126 @@ function init() {
 
     const buyToad = document.getElementById('game__buy-toad');
     buyToad.addEventListener('click', addToad);
-    buyToad.textContent = `Acheter un ${crapaud.name} (${crapaud.number}) - ${crapaud.cost} Or`;
+    buyToad.textContent = `Acheter un ${crapaud.name} - ${crapaud.cost} Or`;
 
     function addToad() {
         if (count >= crapaud.cost) {
             count = count - crapaud.cost;
             crapaud.cost = Math.round(crapaud.cost * 1.2);
             crapaud.number++;
-            buyToad.textContent = `Acheter un ${crapaud.name} (${crapaud.number}) - ${crapaud.cost} Or`;
+            buyToad.textContent = `Acheter un ${crapaud.name} - ${crapaud.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyLeprechaun = document.getElementById('game__buy-leprechaun');
     buyLeprechaun.addEventListener('click', addLeprechaun);
-    buyLeprechaun.textContent = `Acheter un ${lutin.name} (${lutin.number}) - ${lutin.cost} Or`;
+    buyLeprechaun.textContent = `Acheter un ${lutin.name} - ${lutin.cost} Or`;
     
     function addLeprechaun() {
         if (count >= lutin.cost) {
             count = count - lutin.cost;
             lutin.cost = Math.round(lutin.cost * 1.2);
             lutin.number++;
-            buyLeprechaun.textContent = `Acheter un ${lutin.name} (${lutin.number}) - ${lutin.cost} Or`;
+            buyLeprechaun.textContent = `Acheter un ${lutin.name} - ${lutin.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyScarecrow = document.getElementById('game__buy-scarecrow');
     buyScarecrow.addEventListener('click', addScarecrow);
-    buyScarecrow.textContent = `Acheter un ${epouvantard.name} (${epouvantard.number}) - ${epouvantard.cost} Or`;
+    buyScarecrow.textContent = `Acheter un ${epouvantard.name} - ${epouvantard.cost} Or`;
 
     function addScarecrow() {
         if (count >= epouvantard.cost) {
             count = count - epouvantard.cost;
             epouvantard.cost = Math.round(epouvantard.cost * 1.2);
             epouvantard.number++;
-            buyScarecrow.textContent = `Acheter un ${epouvantard.name} (${epouvantard.number}) - ${epouvantard.cost} Or`;
+            buyScarecrow.textContent = `Acheter un ${epouvantard.name} - ${epouvantard.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyCentaur = document.getElementById('game__buy-centaur');
     buyCentaur.addEventListener('click', addCentaur);
-    buyCentaur.textContent = `Acheter un ${centaure.name} (${centaure.number}) - ${centaure.cost} Or`;
+    buyCentaur.textContent = `Acheter un ${centaure.name} - ${centaure.cost} Or`;
 
     function addCentaur() {
         if (count >= centaure.cost) {
             count = count - centaure.cost;
             centaure.cost = Math.round(centaure.cost * 1.2);
             centaure.number++;
-            buyCentaur.textContent = `Acheter un ${centaure.name} (${centaure.number}) - ${centaure.cost} Or`;
+            buyCentaur.textContent = `Acheter un ${centaure.name} - ${centaure.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyAcromantule = document.getElementById('game__buy-acromantule');
     buyAcromantule.addEventListener('click', addAcromantule);
-    buyAcromantule.textContent = `Acheter un ${acromantule.name} (${acromantule.number}) - ${acromantule.cost} Or`;
+    buyAcromantule.textContent = `Acheter un ${acromantule.name} - ${acromantule.cost} Or`;
 
     function addAcromantule() {
         if (count >= acromantule.cost) {
             count = count - acromantule.cost;
             acromantule.cost = Math.round(acromantule.cost * 1.2);
             acromantule.number++;
-            buyAcromantule.textContent = `Acheter un ${acromantule.name} (${acromantule.number}) - ${acromantule.cost} Or`;
+            buyAcromantule.textContent = `Acheter un ${acromantule.name} - ${acromantule.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyHippogriffe = document.getElementById('game__buy-hippogriffe');
     buyHippogriffe.addEventListener('click', addHyppogriffe);
-    buyHippogriffe.textContent = `Acheter un ${hippogriffe.name} (${hippogriffe.number}) - ${hippogriffe.cost} Or`;
+    buyHippogriffe.textContent = `Acheter un ${hippogriffe.name} - ${hippogriffe.cost} Or`;
 
     function addHyppogriffe() {
         if (count >= hippogriffe.cost) {
             count = count - hippogriffe.cost;
             hippogriffe.cost = Math.round(hippogriffe.cost * 1.2);
             hippogriffe.number++;
-            buyHippogriffe.textContent = `Acheter un ${hippogriffe.name} (${hippogriffe.number}) - ${hippogriffe.cost} Or`;
+            buyHippogriffe.textContent = `Acheter un ${hippogriffe.name} - ${hippogriffe.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buySombral = document.getElementById('game__buy-sombral');
     buySombral.addEventListener('click', addSombral);
-    buySombral.textContent = `Acheter un ${sombral.name} (${sombral.number}) - ${sombral.cost} Or`;
+    buySombral.textContent = `Acheter un ${sombral.name} - ${sombral.cost} Or`;
 
     function addSombral() {
         if (count >= sombral.cost) {
             count = count - sombral.cost;
             sombral.cost = Math.round(sombral.cost * 1.2);
             sombral.number++;
-            buySombral.textContent = `Acheter un ${sombral.name} (${sombral.number}) - ${sombral.cost} Or`;
+            buySombral.textContent = `Acheter un ${sombral.name} - ${sombral.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyDementor = document.getElementById('game__buy-dementor');
     buyDementor.addEventListener('click', addDementor);
-    buyDementor.textContent = `Acheter un ${detraqueur.name} (${detraqueur.number}) - ${detraqueur.cost} Or`;
+    buyDementor.textContent = `Acheter un ${detraqueur.name} - ${detraqueur.cost} Or`;
 
     function addDementor() {
         if (count >= detraqueur.cost) {
             count = count - detraqueur.cost;
             detraqueur.cost = Math.round(detraqueur.cost * 1.2);
             detraqueur.number++;
-            buyDementor.textContent = `Acheter un ${detraqueur.name} (${detraqueur.number}) - ${detraqueur.cost} Or`;
+            buyDementor.textContent = `Acheter un ${detraqueur.name} - ${detraqueur.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
 
     const buyElf = document.getElementById('game__buy-elf');
     buyElf.addEventListener('click', addElf);
-    buyElf.textContent = `Acheter un ${elfe.name} (${elfe.number}) - ${elfe.cost} Or`;
+    buyElf.textContent = `Acheter un ${elfe.name} - ${elfe.cost} Or`;
 
     function addElf() {
         if (count >= elfe.cost) {
             count = count - elfe.cost;
             elfe.cost = Math.round(elfe.cost * 1.2);
             elfe.number++;
-            buyElf.textContent = `Acheter un ${elfe.name} (${elfe.number}) - ${elfe.cost} Or`;
+            buyElf.textContent = `Acheter un ${elfe.name} - ${elfe.cost} Or`;
             document.getElementById('game__title').textContent = `${count} Or`;
         }
     };
