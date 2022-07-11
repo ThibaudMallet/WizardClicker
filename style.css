@@ -46,6 +46,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.buyButton {
+    width: 100%;
+}
 .game-info {
     display: flex;
     flex-direction: row;
