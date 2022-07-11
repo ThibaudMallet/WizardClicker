@@ -4,55 +4,64 @@ const beasts =
         name : "Crapaud",
         cost : 10,
         gain : 2,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Lutin",
         cost: 50,
         gain: 10,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Epouvantard",
         cost: 1500,
         gain: 30,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Centaure",
         cost: 5000,
         gain: 100,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Acromantule",
         cost: 15000,
         gain: 300,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Hippogriffe",
         cost: 50000,
         gain: 1000,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Sombral",
         cost: 150000,
         gain: 3000,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Détraqueur",
         cost: 1000000,
         gain: 10000,
-        number: 0
+        number: 0,
+        income: 0,
     },
     {
         name: "Elfe de maison",
         cost: 5000000,
         gain: 30000,
-        number: 0
+        number: 0,
+        income: 0,
     },
 ]
 
@@ -100,14 +109,11 @@ const avada = {
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-
-    
+ 
     let count = 0;
-    
-    document.getElementById('game-info__wallet').textContent = `${count} Or`;
-    
     let incomePerSec = 0;
     
+    document.getElementById('game-info__wallet').textContent = `${count} Or`;
     document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
     
     const castSpell = document.getElementById('game__increment-gold');
@@ -125,7 +131,7 @@ function init() {
         liBeast.textContent = `${beast.name} (${beast.number})`;
         liBeast.classList.add('beast-list__item');
         beastsList.appendChild(liBeast);
-    }
+    };
 
     const spellList = document.querySelector('.spell__list');
     for (const spell of spells) {
@@ -133,7 +139,7 @@ function init() {
         liSpell.textContent = `${spell.name} (${spell.gain} Or)`;
         liSpell.classList.add('spell-list__item');
         spellList.appendChild(liSpell);
-    }
+    };
 
     const buySection = document.querySelector('.buyButton');
     for (const beast of beasts) {
@@ -142,33 +148,35 @@ function init() {
         buySection.appendChild(buyButton);
         
         buyButton.addEventListener('click', buyBeast);
-        buyButton.addEventListener('click', refreshIncome);
         function buyBeast() {
             if (count >= beast.cost) {
                 count = count - beast.cost;
                 beast.cost = Math.round(beast.cost * 1.2);
                 beast.number++;
+                beast.income = beast.gain * beast.number;
                 buyButton.textContent = `Acheter un ${beast.name} (${beast.cost} Or)`;
                 document.getElementById('game-info__wallet').textContent = `${count} Or`;
                 const liBeast = document.querySelectorAll('.beast-list__item');
                 for (const beastLi of liBeast) {
-                        if (beastLi.textContent.startsWith(beast.name)) {
-                            beastLi.textContent = `${beast.name} (${beast.number})`;
-                        };
-                    }
+                    if (beastLi.textContent.startsWith(beast.name)) {
+                        beastLi.textContent = `${beast.name} (${beast.number})`;
+                    };
+                };
+            };
+            const arr = [];
+            for (const beast of beasts) {
+                arr.push(beast.income);             
             }
-        }
-        function refreshIncome() {
-            
-        }
-        
-    }
+            incomePerSec = arr.reduce((first, second) => first + second, 0);
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
+        };
+    };
 
     setInterval(increment, 1000);
     function increment() {
         for (const beast of beasts) {
             count = count + (beast.number * beast.gain);
-        }
+        };
         document.getElementById('game-info__wallet').textContent = `${count} Or`;
     };
 }
