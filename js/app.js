@@ -108,7 +108,11 @@ function init() {
 
     let count = 0;
 
-    document.getElementById('game__title').textContent = `${count} Or`;
+    document.getElementById('game-info__wallet').textContent = `${count} Or`;
+
+    let incomePerSec = 0;
+
+    document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
 
     const castSpell = document.getElementById('game__increment-gold');
     castSpell.addEventListener('click', incrementGold);
@@ -116,7 +120,7 @@ function init() {
 
     function incrementGold() {
         count = count + 1;
-        document.getElementById('game__title').textContent = `${count} Or`;
+        document.getElementById('game-info__wallet').textContent = `${count} Or`;
     };
 
     const buyToad = document.getElementById('game__buy-toad');
@@ -129,7 +133,10 @@ function init() {
             crapaud.cost = Math.round(crapaud.cost * 1.2);
             crapaud.number++;
             buyToad.textContent = `Acheter un ${crapaud.name} - ${crapaud.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('crapaud').textContent = `${crapaud.name} (${crapaud.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -143,7 +150,10 @@ function init() {
             lutin.cost = Math.round(lutin.cost * 1.2);
             lutin.number++;
             buyLeprechaun.textContent = `Acheter un ${lutin.name} - ${lutin.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('lutin').textContent = `${lutin.name} (${lutin.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -157,7 +167,10 @@ function init() {
             epouvantard.cost = Math.round(epouvantard.cost * 1.2);
             epouvantard.number++;
             buyScarecrow.textContent = `Acheter un ${epouvantard.name} - ${epouvantard.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('epouvantard').textContent = `${epouvantard.name} (${epouvantard.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -171,7 +184,10 @@ function init() {
             centaure.cost = Math.round(centaure.cost * 1.2);
             centaure.number++;
             buyCentaur.textContent = `Acheter un ${centaure.name} - ${centaure.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('centaure').textContent = `${centaure.name} (${centaure.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -185,7 +201,10 @@ function init() {
             acromantule.cost = Math.round(acromantule.cost * 1.2);
             acromantule.number++;
             buyAcromantule.textContent = `Acheter un ${acromantule.name} - ${acromantule.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('acromantule').textContent = `${acromantule.name} (${acromantule.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -199,7 +218,10 @@ function init() {
             hippogriffe.cost = Math.round(hippogriffe.cost * 1.2);
             hippogriffe.number++;
             buyHippogriffe.textContent = `Acheter un ${hippogriffe.name} - ${hippogriffe.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('hippogriffe').textContent = `${hippogriffe.name} (${hippogriffe.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -213,7 +235,10 @@ function init() {
             sombral.cost = Math.round(sombral.cost * 1.2);
             sombral.number++;
             buySombral.textContent = `Acheter un ${sombral.name} - ${sombral.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('sombral').textContent = `${sombral.name} (${sombral.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -227,7 +252,10 @@ function init() {
             detraqueur.cost = Math.round(detraqueur.cost * 1.2);
             detraqueur.number++;
             buyDementor.textContent = `Acheter un ${detraqueur.name} - ${detraqueur.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('detraqueur').textContent = `${detraqueur.name} (${detraqueur.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -241,7 +269,10 @@ function init() {
             elfe.cost = Math.round(elfe.cost * 1.2);
             elfe.number++;
             buyElf.textContent = `Acheter un ${elfe.name} - ${elfe.cost} Or`;
-            document.getElementById('game__title').textContent = `${count} Or`;
+            document.getElementById('game-info__wallet').textContent = `${count} Or`;
+            document.getElementById('elfe').textContent = `${elfe.name} (${elfe.number})`;
+            incomePerSec = crapaud.gain * crapaud.number + lutin.gain * lutin.number + epouvantard.gain * epouvantard.number + centaure.gain * centaure.number + acromantule.gain * acromantule.number + hippogriffe.gain * hippogriffe.number + sombral.gain * sombral.number + detraqueur.gain * detraqueur.number + elfe.gain * elfe.number;
+            document.getElementById('incomePerSec').textContent = `Income : ${incomePerSec} Or/sec`;
         }
     };
 
@@ -256,6 +287,6 @@ function init() {
         count = count + (sombral.number * sombral.gain);
         count = count + (detraqueur.number * detraqueur.gain);
         count = count + (elfe.number * elfe.gain);
-        document.getElementById('game__title').textContent = `${count} Or`;
+        document.getElementById('game-info__wallet').textContent = `${count} Or`;
     };
 }
